@@ -1,0 +1,55 @@
+
+@font-face {
+  font-family: GlacialIndifference;
+  src: url('fonts/GlacialIndifference-Regular.ttf');
+}
+
+body {
+	margin: 0px;
+}
+
+#background {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(#7050d0, #e050d0);
+}
+
+#content-container {
+	position: relative;
+	width: 80vw;
+	margin-left: 10vw;
+}
+
+h1 {
+	width: 100%;
+	font-family: GlacialIndifference;
+	color: white;
+	text-align: center;
+	font-size: 60px;
+	font-weight: normal;
+}
+
+h2 {
+	font-family: GlacialIndifference;
+	color: white;
+	font-weight: normal;
+	margin: 0px;
+	font-size: 30px;
+}
+
+.step-header {
+	display: flex;
+	width: 100%;
+	justify-content: start;
+}
+
+.number-circle {
+	width: 45px;
+	height: 45px;
+	font-size: 45px;
+	margin-right: 10px;
+	object-fit: fill;
+}
