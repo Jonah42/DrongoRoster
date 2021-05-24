@@ -1,9 +1,19 @@
 import { StepHeader } from './StepHeader.js';
+import { ItemList } from './ItemList.js';
+import { ItemHeader } from './ItemHeader.js';
+import { Item } from './Item.js';
+import { InputBar } from './InputBar.js';
+import { createSVGMaskURL } from './svg.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  const stepHeaderText = ['Create shifts', 'Enter people', 'Generate roster!']
+  // Step Headers
   const stepHeaders = document.querySelectorAll('[role=StepHeader]');
-  stepHeaders.forEach((stepHeader, i) => {
-    new StepHeader(stepHeader, i+1, stepHeaderText[i]);
+  stepHeaders.forEach(stepHeader => {
+    new StepHeader(stepHeader);
+  });
+  // ItemList
+  const itemLists = document.querySelectorAll('[role=ItemList]');
+  itemLists.forEach((itemList) => {
+    new ItemList(itemList);
   });
 });
