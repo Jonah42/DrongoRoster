@@ -1,11 +1,10 @@
 import { StepHeader } from './StepHeader.js';
 import { ItemList } from './ItemList.js';
-import { ItemHeader } from './ItemHeader.js';
-import { Item } from './Item.js';
-import { InputBar } from './InputBar.js';
-import { createSVGMaskURL } from './svg.js';
+import { DrongoButton } from './DrongoButton.js';
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Make some state here!! And then feed set functions into the components below
+  ``
   // Step Headers
   const stepHeaders = document.querySelectorAll('[role=StepHeader]');
   stepHeaders.forEach(stepHeader => {
@@ -16,4 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
   itemLists.forEach((itemList) => {
     new ItemList(itemList);
   });
+  // Button
+  const buttons = document.querySelectorAll('[role=DrongoButton]');
+  buttons.forEach(button => {
+    new DrongoButton(button, generateRoster);
+  });
 });
+
+function generateRoster() {
+  console.log('Now you have to do the algo :-P');
+}

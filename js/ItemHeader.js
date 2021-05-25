@@ -15,8 +15,8 @@ export function ItemHeader(itemHeaderElement) {
   let svgWidth = 0;
   for (let i = 0; i < names.length; i++) {
     console.log(`${names[i]} ${weights[i]} ${posSum}`);
-    svgWidth = weights[i]*width/100+(i===0?padding:0)
-    const url = createSVGMaskURL(names[i], `${svgWidth}`, `100%`, i===0?`${padding}`:'0', '20', 'start', '24px')
+    svgWidth = weights[i]*width/100+(i===0?padding:0);
+    const url = createSVGMaskURL(names[i], `${svgWidth}`, `100%`, i===0?`${padding}`:'0', '20', 'start', '24px');
     urlString += `url(${url}), `;
     posString += `${posSum}px 0px, `;
     repeatString += 'no-repeat, ';

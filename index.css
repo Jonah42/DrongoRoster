@@ -107,12 +107,14 @@ p {
     width: 5%;
     box-sizing: border-box;
     /*background-color: yellow;*/
-    object-fit: cover;
+    height: 20px;
+    object-fit: contain;
     cursor: pointer;
 }
 
 .delete {
     transform: rotate(45deg);
+    /*height: 60%;*/
 }
 
 /** INPUTBAR **/
@@ -136,4 +138,16 @@ input {
     font-family: GlacialIndifference;
     font-size: 20px;
     outline: none;
+}
+
+/** generate **/
+
+.generate-button {
+    width: 25%;
+    height: 50px;
+    background-color: white;
+    border-width: 0px;
+    border-radius: 10px;
+    margin-left: 37.5%;
+    cursor: pointer;
 }
