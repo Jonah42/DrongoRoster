@@ -2,7 +2,7 @@ import { ItemHeader } from './ItemHeader.js';
 import { InputBar } from './InputBar.js';
 import { Item } from './Item.js';
 
-export function ItemList(itemListElement) {
+export function ItemList(itemListElement, state) {
   // extract props
   const headings = itemListElement.getAttribute('data-headings');
   const placeholders = itemListElement.getAttribute('data-placeholders');
@@ -27,17 +27,22 @@ export function ItemList(itemListElement) {
   itemListElement.appendChild(bar);
   new InputBar(bar, addItem);
 
-  function addItem(input) {
+  if (state !== []) state.forEach(data => addItem(data, false));
+
+  function addItem(input, updateState=true) {
     const newItem = document.createElement('div');
     newItem.className = 'item';
     newItem.setAttribute('data-input', input);
     newItem.setAttribute('data-weights', weights);
     curr.appendChild(newItem);
     new Item(newItem, deleteItem);
-    console.log('Hiiiiiii');
+    if (updateState) state.push(input);
   }
 
   function deleteItem(elem) {
+    for (let i = 0; i < curr.children.length; i++) {
+      if (curr.children[i] === elem) state.splice(i, 1);
+    }
     curr.removeChild(elem);
     console.log('deleted');
   }
